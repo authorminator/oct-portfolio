@@ -72,10 +72,9 @@
 
 .underline {
   text-decoration: underline;
-  text-decoration-color: linear-gradient(90deg, #2bd9c6, #ffc861);
+  text-decoration-color: #2bd9c567;
   text-underline-offset: 6px;
   text-decoration-thickness: 3px;
-  font-variant: small-caps;
 }
 
 .hero-subtitle {
