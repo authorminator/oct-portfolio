@@ -67,6 +67,15 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-variant: small-caps;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: linear-gradient(90deg, #2bd9c6, #ffc861);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+  font-variant: small-caps;
 }
 
 .hero-subtitle {
@@ -90,8 +99,9 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #e8eaf0;
-  padding: 0.6rem 1.2rem;
+  padding: 1rem 1.6rem;
   font-weight: 500;
+  font-size: 1.5rem;
   letter-spacing: 0.03em;
   transition: all 0.25s ease;
   backdrop-filter: blur(4px);

@@ -18,7 +18,10 @@ function App() {
 
         <div className="hero-content">
           <p className="hero-eyebrow">Web Developer in Tokyo</p>
-          <h1 className="hero-title">{portfolioContent.personal.name}</h1>
+          <h1 className="hero-title">
+            <span className="underline">{portfolioContent.personal.name}</span>{" "}
+            {portfolioContent.personal.lastName}
+          </h1>
           <p className="hero-subtitle">
             I build clean, interactive, and modern web apps using{" "}
             <strong>Rails</strong> & <strong>React</strong>.

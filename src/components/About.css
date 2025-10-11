@@ -3,7 +3,7 @@
    ------------------------------------------- */
 
 .about-section {
-  padding: 8rem 1rem;
+  padding: 4rem 1rem;
   background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
   color: var(--fg-0);
   position: relative;
@@ -71,7 +71,7 @@
   transition: box-shadow 0.3s ease;
 }
 .profile-img:hover {
-  box-shadow: 0 0 60px rgba(43, 217, 198, 0.4);
+  box-shadow: 0 0 60px rgba(43, 217, 198, 0.3);
 }
 
 /* Text */
@@ -90,9 +90,15 @@
 .about-intro,
 .about-description {
   color: var(--fg-muted);
-  font-size: 1.05rem;
+  /* font-size: 1.05rem; */
   line-height: 1.8;
   margin-bottom: 1rem;
+}
+.about-intro {
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
 }
 
 /* -------- Skill Cards Grid -------- */

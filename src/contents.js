@@ -7,11 +7,11 @@ const portfolioContent = {
   // Personal Information
   personal: {
     name: "Rayz",
-    fullname: "Rayz Arain",
+    lastName: "Arain",
     urlName: "Rayz-An-Exception",
     title: "Fullstack Web Developer",
     get description() {
-      return `My name is ${this.fullname}. I'm passionate about programming and love building products from start to finish that create real impact through sustainable and scalable systems.`;
+      return `My name is ${this.name}. I'm passionate about programming and love building products from start to finish that create real impact through sustainable and scalable systems.`;
     },
     profileEmoji: "👤", // You can change this to any emoji or remove for an image
     profileIcon: profileImg, // Replace with your image path
@@ -34,8 +34,9 @@ const portfolioContent = {
   // About Section
   about: {
     title: "About Me",
-    intro:
-      "I’m a web developer with over a year of experience building user-friendly, responsive websites and applications. I focus on creating clean, efficient, and accessible digital solutions that not only look good but also deliver real value.",
+    get intro() {
+      return `My name is ${portfolioContent.personal.name}. I’m a web developer with over a year of experience building user-friendly, responsive websites and applications.`;
+    },
     description:
       "I enjoy working with modern web technologies and pay close attention to responsive design, performance, and accessibility. I believe that thoughtful design, clean code, and collaborative problem-solving are key to creating products people love to use.",
 
