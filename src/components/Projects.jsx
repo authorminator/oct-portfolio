@@ -1,37 +1,49 @@
-import portfolioContent from "../contents";
 import "./Projects.css";
+import portfolioContent from "../contents";
 
-function Projects() {
-  const { projects } = portfolioContent.portfolio;
+export default function Projects() {
+  const projects = portfolioContent.portfolio.projects;
 
   return (
-    <section id="projects" className="projects-section">
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div className="project-card" key={project.title + index}>
-            <div className="project-icon">{project.icon}</div>
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
-            <div className="project-tech">
-              {project.technologies.map((tech, i) => (
-                <span key={tech + i} className="tech-tag">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <a
-              href={project.link}
-              className="project-link"
-              target="_blank"
-              rel="noopener noreferrer"
+    <section className="projects-section" id="projects">
+      <div className="container">
+        <h2 className="projects-heading">Projects</h2>
+
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div
+              key={project.title}
+              className={`project-card ${
+                index % 2 === 1 ? "reverse-layout" : ""
+              }`}
             >
-              View Project
-            </a>
-          </div>
-        ))}
+              <div className="project-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+
+              <div className="project-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="tech-list">
+                  {project.technologies.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    className="btn-view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-export default Projects;

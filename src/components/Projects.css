@@ -1,78 +1,130 @@
+/* -------------------------------------------
+   Projects Section (Dribbble-inspired)
+   ------------------------------------------- */
+
+.projects-section {
+  position: relative;
+  padding: 8rem 1rem;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
+  overflow: hidden;
+}
+
+.projects-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 4rem;
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid layout */
 .projects-grid {
   display: flex;
-  /* grid-template-columns: repeat(3, 1fr); */
-  column-gap: 30rem;
-  row-gap: 5rem;
-  justify-items: center;
-  justify-content: center;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
-}
-
-.project-card {
-  background: #f2f2f2;
-
-  background-size: 300px 300px;
-  background-repeat: repeat;
-  border-radius: 4rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  text-align: center;
-  width: 100%;
-  max-width: 18.75rem;
-  height: 25rem;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-
-  position: relative; /* so pseudo-elements are positioned relative to the card */
-  /* z-index: 1; */
+  gap: 6rem;
 }
 
-.project-icon {
-  font-size: 2.5rem;
+/* Card wrapper */
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Reverse layout for every other project */
+.project-card.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+/* Image styling */
+.project-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+.project-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease;
+}
+.project-card:hover .project-image img {
+  transform: scale(1.03);
+}
+
+/* Content area */
+.project-content {
+  flex: 1 1 400px;
+  max-width: 520px;
+  text-align: left;
+}
+
+.project-content h3 {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-.project-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.project-description {
-  flex-grow: 1;
-  margin-bottom: 3rem;
-  color: #555;
-}
-
-.project-tech {
+.project-content p {
+  font-size: 1rem;
+  color: var(--fg-muted);
   margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
-.tech-tag {
-  background-color: #eef;
-  color: #007bff;
-  padding: 0.3rem 0.6rem;
-  border-radius: 3rem;
-  font-size: 0.8rem;
-  margin: 0.2rem;
+/* Tech tags */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+}
+.tech-list span {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: var(--fg-0);
+  backdrop-filter: blur(4px);
+}
+
+/* View Project button */
+.btn-view {
   display: inline-block;
-}
-
-.project-link {
-  width: fit-content;
-  background-color: #0d2947;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 3rem;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  color: #051311;
   text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 0 20px rgba(43, 217, 198, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(43, 217, 198, 0.35);
 }
 
-.project-link:hover {
-  background-color: #164475;
-  color: white;
-  transform: scale(1.05);
+/* Responsive layout */
+@media (max-width: 900px) {
+  .project-card {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .project-card.reverse-layout {
+    flex-direction: column;
+  }
+  .project-content {
+    text-align: center;
+  }
 }

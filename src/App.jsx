@@ -7,21 +7,32 @@ import portfolioContent from "./contents";
 import "./App.css";
 
 function App() {
-  // 'about' or 'projects'
   const [activeTab, setActiveTab] = useState("about");
 
   return (
     <div className="app-container">
-      <div className="stars"></div>
-      <header className="app-header">
-        <h1>{portfolioContent.personal.name}</h1>
+      <div className="stars" aria-hidden="true"></div>
 
-        <Tabs
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          tab1={{ key: "about", label: "About Me" }}
-          tab2={{ key: "projects", label: "Projects" }}
-        />
+      <header className="app-header">
+        <div className="hero-bg" aria-hidden="true"></div>
+
+        <div className="hero-content">
+          <p className="hero-eyebrow">Web Developer in Tokyo</p>
+          <h1 className="hero-title">{portfolioContent.personal.name}</h1>
+          <p className="hero-subtitle">
+            I build clean, interactive, and modern web apps using{" "}
+            <strong>Rails</strong> & <strong>React</strong>.
+          </p>
+
+          <div className="hero-tabs">
+            <Tabs
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+              tab1={{ key: "about", label: "About Me" }}
+              tab2={{ key: "projects", label: "Projects" }}
+            />
+          </div>
+        </div>
       </header>
 
       <main className="main-content">

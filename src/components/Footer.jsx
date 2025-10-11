@@ -1,28 +1,50 @@
 import portfolioContent from "../contents";
 import "./Footer.css";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
-  const { personal, footer } = portfolioContent;
+  const { footer } = portfolioContent;
 
   return (
-    <footer className="site-footer">
-      <div className="footer-left">
-        <span className="footer-name">
-          {personal.profileEmoji} {personal.name}
-        </span>
-        <span className="footer-copyright">{footer.copyright}</span>
-      </div>
-      <div className="footer-right">
-        {footer.socialLinks.map((link, index) => (
-          <a
-            key={index}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {link.name}
-          </a>
-        ))}
+    <footer className="footer-section">
+      <div className="footer-line" />
+
+      <div className="footer-bar">
+        {/* Left: Copyright */}
+        <p className="footer-copy">{footer.copyright}</p>
+
+        {/* Right: Icons */}
+        <div className="footer-icons">
+          {footer.socialLinks?.map((link) => {
+            if (link.name.toLowerCase().includes("github")) {
+              return (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.name}
+                >
+                  <FaGithub />
+                </a>
+              );
+            }
+            if (link.name.toLowerCase().includes("linkedin")) {
+              return (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.name}
+                >
+                  <FaLinkedin />
+                </a>
+              );
+            }
+            return null;
+          })}
+        </div>
       </div>
     </footer>
   );

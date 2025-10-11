@@ -1,14 +1,12 @@
-// src/contents.js
-
-// Portfolio Content Configuration
-// Edit this file to update your portfolio information
-
 import profileImg from "./assets/profile-photo.jpg";
+import studyHiveImg from "./assets/studyhive.png";
+import superHeroAcademyImg from "./assets/superhero-academy.png";
+import eigoParkImg from "./assets/eigo-park.png";
 
 const portfolioContent = {
   // Personal Information
   personal: {
-    name: "Rayzz",
+    name: "Rayz",
     fullname: "Rayz Arain",
     urlName: "Rayz-An-Exception",
     title: "Fullstack Web Developer",
@@ -45,17 +43,36 @@ const portfolioContent = {
     skills: [
       {
         category: "Web Development",
-        technologies:
-          "Ruby on Rails, React, Vue.js, Node.js, Express.js, Git, PostgreSQL",
+        technologies: [
+          "Ruby on Rails",
+          "React",
+          "Vue.js",
+          "Node.js",
+          "Express.js",
+          "Git",
+          "PostgreSQL",
+        ],
       },
       {
         category: "Programming Languages",
-        technologies: "Ruby, Python, HTML5, CSS3, JavaScript, TypeScript",
+        technologies: [
+          "Ruby",
+          "Python",
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "TypeScript",
+        ],
       },
       {
         category: "Competencies",
-        technologies:
-          "Responsive Design, Prototyping, Web Application Development, Teaching, Team Collaboration",
+        technologies: [
+          "Responsive Design",
+          "Prototyping",
+          "Web Application Development",
+          "Teaching",
+          "Team Collaboration",
+        ],
       },
     ],
   },
@@ -75,6 +92,7 @@ const portfolioContent = {
         icon: "💻",
         technologies: ["Ruby on Rails", "PostgreSQL", "Stimulus js", "Heroku"],
         link: "https://www.studyhive.org/",
+        image: studyHiveImg,
       },
       {
         title: "Super Hero Academy",
@@ -83,6 +101,7 @@ const portfolioContent = {
         icon: "🦸‍♂️",
         technologies: ["Ruby on Rails", "PostgreSQL", "Stimulus js", "Heroku"],
         link: "https://super-hero-academy-1c8a93bbc04f.herokuapp.com/",
+        image: superHeroAcademyImg,
       },
       {
         title: "Eigo-Park",
@@ -90,6 +109,7 @@ const portfolioContent = {
         icon: "📔",
         technologies: ["React", "Vite", "Tailwind CSS", "Netlify"],
         link: "https://eigo-park.netlify.app/",
+        image: eigoParkImg,
       },
     ],
   },
@@ -122,10 +142,10 @@ const portfolioContent = {
 
   // Footer Section
   footer: {
-    copyright: "© 2025 Rayz Arain. All rights reserved.",
+    copyright: "© 2025 Rayz-An-Exception. All rights reserved.",
     socialLinks: [
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/rayz-arain/" },
       { name: "GitHub", url: "https://github.com/authorminator" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/rayz-arain/" },
     ],
   },
 };

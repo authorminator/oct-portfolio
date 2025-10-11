@@ -1,29 +1,151 @@
-#root {
-  max-width: 140rem;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-/* =================================
-   Global & App Layout
-   ================================= */
+/* ---------- Base Layout ---------- */
 .app-container {
-  margin-top: 2rem;
+  background: var(--bg-0, #0e0f12);
+  color: var(--fg-0, #e8eaf0);
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-/* =================================
-   Header & Tabs
-   ================================= */
-.app-header {
+  align-items: center;
   text-align: center;
-  margin-bottom: 3rem;
 }
 
-.app-header h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+/* ---------- Hero Section ---------- */
+.app-header {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 8rem 1rem 10rem;
+  isolation: isolate;
+  background: linear-gradient(180deg, #121622, #0e0f12);
+}
+
+.hero-bg::before,
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+.hero-bg::before {
+  width: 700px;
+  height: 700px;
+  top: -200px;
+  left: -300px;
+  background: radial-gradient(circle at 40% 40%, #2bd9c6 0%, transparent 70%);
+}
+.hero-bg::after {
+  width: 900px;
+  height: 900px;
+  top: -250px;
+  right: -350px;
+  background: radial-gradient(circle at 60% 30%, #ffc861 0%, transparent 70%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a7b0c0;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 700;
+  margin: 0.5rem 0;
+  line-height: 1.05;
+  background: linear-gradient(90deg, #2bd9c6, #ffc861);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #a7b0c0;
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+}
+
+/* ---------- Tabs Wrapper ---------- */
+.hero-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Optional: you can leave .tabs styling inside Tabs.css as is,
+   but this adds a "glow" ring feel if you want to overwrite it */
+.tabs-container button {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e8eaf0;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+.tabs-container button:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+.tabs-container button.active {
+  background: linear-gradient(90deg, #2bd9c6, #ffc861);
+  color: #051311;
+  box-shadow: 0 0 25px rgba(43, 217, 198, 0.25);
+  transform: translateY(1px);
+}
+.tabs-container button.active:hover {
+  box-shadow: 0 0 25px rgba(43, 217, 198, 0.5);
+  transform: translateY(-3px);
+}
+
+/* ---------- Main & Footer ---------- */
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding: 3rem 1rem 6rem;
+}
+
+footer {
+  padding: 2rem 1rem;
+  color: #a7b0c0;
+  font-size: 0.9rem;
+}
+
+/* ---------- Optional Starry Layer ---------- */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      1px 1px at 20px 20px,
+      rgba(255, 255, 255, 0.25) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      1px 1px at 40px 80px,
+      rgba(255, 255, 255, 0.25) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      1px 1px at 130px 50px,
+      rgba(255, 255, 255, 0.25) 1px,
+      transparent 1px
+    );
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.2;
+  z-index: 0;
 }

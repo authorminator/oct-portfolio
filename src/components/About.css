@@ -1,130 +1,209 @@
+/* -------------------------------------------
+   About Section (side layout + capsule cards)
+   ------------------------------------------- */
+
 .about-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 4rem;
-  text-align: left;
-  line-height: 1.6;
+  padding: 8rem 1rem;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
+  color: var(--fg-0);
+  position: relative;
+  overflow: hidden;
 }
 
-.about-content {
+/* Decorative glows */
+.about-section::before,
+.about-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: -1;
+}
+.about-section::before {
+  width: 500px;
+  height: 500px;
+  top: -150px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(43, 217, 198, 0.1), transparent 70%);
+}
+.about-section::after {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  right: -200px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 97, 0.08),
+    transparent 70%
+  );
+}
+
+/* -------- Photo + Text layout -------- */
+.about-layout {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 4rem;
-  justify-items: center;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.about-top {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
   flex-wrap: wrap;
+  gap: 4rem;
 }
 
-.about-description {
-  /* border-radius: 50%; */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 3.5rem;
+/* Photo */
+.about-photo {
+  flex: 1 1 320px;
   text-align: center;
-  /* width: 100%; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  font-size: 1.5rem;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
-
-.background-warm {
-  background: radial-gradient(
-    circle,
-    rgb(236, 225, 209) 0%,
-    rgb(236, 225, 209) 30%,
-    rgb(45, 41, 33) 80%,
-    rgb(45, 41, 33) 95%,
-    rgb(0, 0, 0) 100%
-  );
-}
-
-.background-cool {
-  background: radial-gradient(
-    circle,
-    rgb(209, 234, 236) 0%,
-    rgb(209, 234, 236) 30%,
-    rgb(33, 35, 45) 80%,
-    rgb(33, 35, 45) 95%,
-    rgb(0, 0, 0) 100%
-  );
-}
-
-.background-greenish {
-  background: radial-gradient(
-    circle,
-    rgb(209, 236, 217) 0%,
-    rgb(209, 236, 217) 30%,
-    rgb(33, 45, 35) 80%,
-    rgb(33, 45, 35) 95%,
-    rgb(0, 0, 0) 100%
-  );
-}
-
-.padding-0 {
-  padding: 0;
-}
-
-.img-container {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 350px;
-  height: 350px;
-}
-
-.margin-top-30 {
-  margin-top: 30%;
-}
-
 .profile-img {
-  width: 100%;
-  height: 100%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 40px rgba(43, 217, 198, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+.profile-img:hover {
+  box-shadow: 0 0 60px rgba(43, 217, 198, 0.4);
 }
 
-.circle {
-  border-radius: 50%;
+/* Text */
+.about-text {
+  flex: 1 1 420px;
+  max-width: 500px;
 }
-
-.width-350 {
-  max-width: 21.875rem;
-  height: 21.875rem;
+.about-heading {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
-.width-400 {
-  max-width: 25rem;
-  height: 25rem;
-}
-
-.contact-info {
-  /* margin: 2rem; */
-  width: 100%;
-  /* padding: 1.5rem; */
-  /* border-top: 1px solid #eee; */
-}
-
-.contact-info h3 {
+.about-intro,
+.about-description {
+  color: var(--fg-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
   margin-bottom: 1rem;
 }
 
-.contact-info p {
-  margin: 0.5rem 0;
+/* -------- Skill Cards Grid -------- */
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.social-links-about a {
-  margin-right: 15px;
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
+.skill-card {
+  flex: 1 1 300px;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+.skill-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--acc);
+}
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.skill-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  color: var(--fg-0);
+  font-size: 0.95rem;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+.skill-badge:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.social-links-about a:hover {
-  text-decoration: underline;
+/* -------- Contact card -------- */
+.contact-card {
+  margin-top: 4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 1.8rem 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+.contact-card h3 {
+  margin-bottom: 1rem;
+  color: var(--acc-2);
+}
+.contact-card a {
+  color: var(--acc);
+  font-weight: 500;
+}
+
+/* Social links */
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.social-links a {
+  color: var(--fg-0);
+  background: rgba(125, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+.social-links a:hover {
+  background: linear-gradient(90deg, var(--acc), var(--acc-2));
+  color: #051311;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-top {
+    flex-direction: column;
+    text-align: center;
+  }
+  .skills-grid {
+    gap: 1.5rem;
+  }
 }
