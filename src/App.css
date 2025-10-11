@@ -1,0 +1,29 @@
+#root {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* =================================
+   Global & App Layout
+   ================================= */
+.app-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =================================
+   Header & Tabs
+   ================================= */
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app-header h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
