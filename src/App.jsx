@@ -11,11 +11,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="stars" aria-hidden="true"></div>
-
+      <div className="ambient-bg" aria-hidden />
       <header className="app-header">
-        <div className="hero-bg" aria-hidden="true"></div>
-
         <div className="hero-content">
           <p className="hero-eyebrow">Web Developer in Tokyo</p>
           <h1 className="hero-title">

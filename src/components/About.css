@@ -4,39 +4,44 @@
 
 .about-section {
   padding: 4rem 1rem;
-  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
-  color: var(--fg-0);
+  padding-bottom: 4rem;
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
 
-/* Decorative glows */
-.about-section::before,
+/* Decorative glows
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(43, 217, 198, 0.08),
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: -1;
+}
+
 .about-section::after {
   content: "";
   position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  z-index: -1;
-}
-.about-section::before {
-  width: 500px;
-  height: 500px;
-  top: -150px;
-  left: -200px;
-  background: radial-gradient(circle, rgba(43, 217, 198, 0.1), transparent 70%);
-}
-.about-section::after {
-  width: 600px;
-  height: 600px;
-  bottom: -200px;
+  bottom: -300px;
   right: -200px;
+  width: 700px;
+  height: 700px;
   background: radial-gradient(
-    circle,
-    rgba(255, 200, 97, 0.08),
+    circle at 70% 70%,
+    rgba(255, 200, 97, 0.06),
     transparent 70%
   );
-}
+  filter: blur(100px);
+  z-index: -1;
+} */
 
 /* -------- Photo + Text layout -------- */
 .about-layout {
@@ -158,6 +163,7 @@
 /* -------- Contact card -------- */
 .contact-card {
   margin-top: 4rem;
+  margin-bottom: 10rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);

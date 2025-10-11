@@ -1,13 +1,41 @@
-/* ---------- Base Layout ---------- */
 .app-container {
-  background: var(--bg-0, #0e0f12);
-  color: var(--fg-0, #e8eaf0);
+  position: relative;
   min-height: 100vh;
-  font-family: "Inter", "Segoe UI", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  overflow-x: hidden;
+}
+
+/* ONE ambient layer for the whole site */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* Base dark + four soft glows (two strong at top, two faint lower) */
+  background: radial-gradient(
+      900px 700px at 12% -5%,
+      rgba(43, 217, 198, 0.22),
+      transparent 65%
+    ),
+    radial-gradient(
+      1100px 800px at 88% -8%,
+      rgba(255, 200, 97, 0.18),
+      transparent 70%
+    ),
+    radial-gradient(
+      900px 700px at 82% 85%,
+      rgba(43, 217, 198, 0.1),
+      transparent 70%
+    ),
+    radial-gradient(
+      1100px 800px at 15% 95%,
+      rgba(255, 200, 97, 0.08),
+      transparent 75%
+    ),
+    linear-gradient(180deg, #0e0f12 0%, #0b0c10 100%);
+  background-repeat: no-repeat;
+  /* Locks the light so it doesn’t “scroll away” */
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
 }
 
 /* ---------- Hero Section ---------- */
@@ -16,31 +44,8 @@
   overflow: hidden;
   width: 100%;
   padding: 8rem 1rem 10rem;
-  isolation: isolate;
-  background: linear-gradient(180deg, #121622, #0e0f12);
-}
-
-.hero-bg::before,
-.hero-bg::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  filter: blur(60px);
-}
-.hero-bg::before {
-  width: 700px;
-  height: 700px;
-  top: -200px;
-  left: -300px;
-  background: radial-gradient(circle at 40% 40%, #2bd9c6 0%, transparent 70%);
-}
-.hero-bg::after {
-  width: 900px;
-  height: 900px;
-  top: -250px;
-  right: -350px;
-  background: radial-gradient(circle at 60% 30%, #ffc861 0%, transparent 70%);
+  background: transparent; /* important */
+  text-align: center;
 }
 
 .hero-content {

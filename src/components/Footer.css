@@ -3,11 +3,12 @@
    ------------------------------------------- */
 
 .footer-section {
-  /* background: linear-gradient(180deg, var(--bg-1), var(--bg-0)); */
-  color: var(--fg-muted);
-  padding: 3rem 2rem;
+  position: relative;
   width: 100%;
-  box-sizing: border-box;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  color: var(--fg-muted);
+  background: transparent; /* important */
 }
 
 /* Thin divider line */
