@@ -34,6 +34,7 @@ function App() {
           </div>
         </div>
       </header>
+      <div className="header-line" />
 
       <main className="main-content">
         {activeTab === "about" ? <About /> : <Projects />}
