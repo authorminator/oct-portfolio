@@ -117,6 +117,7 @@
 }
 .btn-view:hover {
   transform: translateY(-2px);
+  background: linear-gradient(90deg, #ffc861, #2bd9c6);
   box-shadow: 0 0 28px rgba(43, 217, 198, 0.35);
 }
 
