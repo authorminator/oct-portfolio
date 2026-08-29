@@ -42,7 +42,7 @@
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-2px);
   border-color: rgba(43, 217, 198, 0.35);
 }
 

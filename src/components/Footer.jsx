@@ -2,8 +2,8 @@ import portfolioContent from "../contents";
 import "./Footer.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-function Footer() {
-  const { footer } = portfolioContent;
+function Footer({ content }) {
+  const { footer } = content;
 
   return (
     <footer className="footer-section">

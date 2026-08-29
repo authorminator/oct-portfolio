@@ -1,8 +1,8 @@
 import portfolioContent from "../contents";
 import "./About.css";
 
-function About() {
-  const { about } = portfolioContent;
+function About({ content }) {
+  const { about } = content;
 
   return (
     <section id="about" className="about-section">

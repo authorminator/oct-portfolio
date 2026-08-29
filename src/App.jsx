@@ -3,26 +3,31 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import portfolioContent from "./contents";
+import portfolioContentEn from "./contents";
+import portfolioContentJa from "./content.ja";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [language, setLanguage] = useState("en");
+
+  const content = language === "en" ? portfolioContentEn : portfolioContentJa;
+
   return (
     <div className="app-container">
       <div className="ambient-bg" aria-hidden />
-      <Navbar />
+      <Navbar content={content} language={language} setLanguage={setLanguage} />
       <header id="home" className="app-header">
         <div className="hero-container">
           <div className="hero-image">
             <img
-              src={portfolioContent.personal.profileIcon}
-              alt={`${portfolioContent.personal.name} profile`}
+              src={content.personal.profileIcon}
+              alt={`${content.personal.name} profile`}
             />
           </div>
           <div className="hero-content">
             <h1 className="hero-title">
-              {portfolioContent.personal.name}{" "}
-              {portfolioContent.personal.lastName}
+              {content.personal.name} {content.personal.lastName}
             </h1>
 
             <h2 className="hero-role">Web Developer in Tokyo</h2>
@@ -48,12 +53,12 @@ function App() {
       <div className="header-line" />
 
       <main className="main-content">
-        <About />
-        <Projects />
-        <Contact />
+        <About content={content} />
+        <Projects content={content} />
+        <Contact content={content} />
       </main>
 
-      <Footer />
+      <Footer content={content} />
     </div>
   );
 }

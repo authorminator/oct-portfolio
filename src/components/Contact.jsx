@@ -2,8 +2,8 @@ import "./Contact.css";
 import portfolioContent from "../contents";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-function Contact() {
-  const { contact, footer } = portfolioContent;
+function Contact({ content }) {
+  const { contact, footer } = content;
 
   return (
     <section id="contact">

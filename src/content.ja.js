@@ -5,42 +5,42 @@ import eigoParkImg from "./assets/eigo-park.png";
 import itoRainbowImg from "./assets/ito-rainbow.png";
 import foodyFortuneImg from "./assets/foody-fortune.png";
 
-const portfolioContent = {
+const portfolioContentJa = {
   personal: {
     name: "Rayz",
     lastName: "Arain",
     urlName: "Rayz-An-Exception",
-    title: "Fullstack Web Developer",
+    title: "フルスタックWeb開発者",
     get description() {
-      return `My name is ${this.name}. I'm passionate about programming and love building products from start to finish that create real impact through sustainable and scalable systems.`;
+      return `${this.name}です。プログラミングが好きで、アイデアから完成まで一貫してプロダクトを作ることにやりがいを感じています。持続可能で拡張性のあるシステムを通じて、実際に価値を生み出せるプロダクト開発を目指しています。`;
     },
-    profileEmoji: "👤", // You can change this to any emoji or remove for an image
-    profileIcon: profileImg, // Replace with your image path
+    profileEmoji: "👤",
+    profileIcon: profileImg,
   },
 
   navigation: [
-    { text: "Home", href: "#home" },
-    { text: "About", href: "#about" },
-    { text: "Projects", href: "#projects" },
-    { text: "Contact", href: "#contact" },
+    { text: "ホーム", href: "#home" },
+    { text: "自己紹介", href: "#about" },
+    { text: "制作実績", href: "#projects" },
+    { text: "お問い合わせ", href: "#contact" },
   ],
 
   heroButtons: [
-    { text: "View My Work", href: "#projects", type: "primary" },
-    { text: "Get In Touch", href: "#contact", type: "secondary" },
+    { text: "制作実績を見る", href: "#projects", type: "primary" },
+    { text: "お問い合わせ", href: "#contact", type: "secondary" },
   ],
 
   about: {
-    title: "About Me",
+    title: "自己紹介",
     get intro() {
-      return `My name is ${portfolioContent.personal.name}. I’m a web developer with over a year of experience building user-friendly, responsive websites and applications.`;
+      return `${portfolioContentJa.personal.name}です。1年以上にわたり、ユーザーにとって使いやすく、レスポンシブなWebサイトやWebアプリケーションの開発に取り組んでいます。`;
     },
     description:
-      "I enjoy working with modern web technologies and pay close attention to responsive design, performance, and accessibility. I believe that thoughtful design, clean code, and collaborative problem-solving are key to creating products people love to use.",
+      "モダンなWeb技術を使った開発が好きで、レスポンシブデザイン、パフォーマンス、アクセシビリティを意識しています。考え抜かれたデザイン、読みやすいコード、そしてチームでの問題解決が、使いたくなるプロダクトを作るために重要だと考えています。",
 
     skills: [
       {
-        category: "Web Development Tools",
+        category: "Web開発ツール",
         technologies: [
           {
             name: "Ruby on Rails",
@@ -65,7 +65,7 @@ const portfolioContent = {
         ],
       },
       {
-        category: "Programming Languages",
+        category: "プログラミング言語",
         technologies: [
           {
             name: "Ruby",
@@ -85,32 +85,31 @@ const portfolioContent = {
           },
         ],
       },
-
       {
-        category: "Competencies",
+        category: "その他のスキル",
         technologies: [
-          { name: "Responsive Design" },
-          { name: "Prototyping" },
-          { name: "Web Application Development" },
-          { name: "Teaching" },
-          { name: "Team Collaboration" },
+          { name: "レスポンシブデザイン" },
+          { name: "プロトタイピング" },
+          { name: "Webアプリケーション開発" },
+          { name: "教育・指導" },
+          { name: "チーム開発" },
         ],
       },
     ],
   },
 
   portfolio: {
-    title: "Portfolio",
+    title: "制作実績",
     description:
-      "A selection of my recent work showcasing various skills and technologies.",
+      "これまでに制作したWebアプリケーションの一部をご紹介します。使用した技術や担当した役割もあわせて掲載しています。",
 
     projects: [
       {
         title: "StudyHive",
         description:
-          "Make learning easier by doing it with other people rather than alone.",
+          "一人ではなく、他の人と一緒に学習することで、勉強を続けやすくするためのWebアプリです。",
         more_description:
-          "Team Project - I was the Team Designer and one of the Developers",
+          "チームプロジェクト - チームデザイナーおよび開発メンバーとして参加",
         icon: "💻",
         technologies: ["Ruby on Rails", "PostgreSQL", "Stimulus js", "Heroku"],
         link: "https://studeehive-56b6d3f6e62c.herokuapp.com/",
@@ -120,9 +119,9 @@ const portfolioContent = {
       {
         title: "Super Hero Academy",
         description:
-          "A fictional marketplace app about people trying to learn Super Powers.",
+          "スーパーパワーを学びたい人向けの架空のマーケットプレイスをテーマにしたWebアプリです。",
         more_description:
-          "Team Project - I was the Project Manager and one of the Developers",
+          "チームプロジェクト - プロジェクトマネージャーおよび開発メンバーとして参加",
         icon: "🦸‍♂️",
         technologies: ["Ruby on Rails", "PostgreSQL", "Stimulus js", "Heroku"],
         link: "https://my-superhero-academy-b4d3b19d6c27.herokuapp.com/",
@@ -131,8 +130,9 @@ const portfolioContent = {
       },
       {
         title: "Eigo-Park",
-        description: "An app of educational games for elementary school kids.",
-        more_description: "Solo Project",
+        description:
+          "小学生向けの英語学習ゲームをまとめた教育用Webアプリです。",
+        more_description: "個人プロジェクト",
         icon: "📔",
         technologies: ["React", "Vite", "Tailwind CSS", "Netlify"],
         link: "https://eigo-park.netlify.app/",
@@ -142,8 +142,8 @@ const portfolioContent = {
       {
         title: "Ito-Rainbow Game",
         description:
-          "A multiplayer web game inspired by Ito Rainbow by Arclight.",
-        more_description: "Solo Project",
+          "Arclightの「ito レインボー」に着想を得た、複数人で遊べるWebゲームです。",
+        more_description: "個人プロジェクト",
         icon: "📔",
         technologies: [
           "Ruby on Rails",
@@ -159,8 +159,8 @@ const portfolioContent = {
       {
         title: "Foody-Fortune Game",
         description:
-          "A click-based minigame about destroying food items and finding motivational quotes inside them.",
-        more_description: "Solo Project",
+          "食べ物のアイテムをクリックして壊し、その中からモチベーションを高めるメッセージを見つけるミニゲームです。",
+        more_description: "個人プロジェクト",
         icon: "📔",
         technologies: ["React", "Vite", "Tailwind CSS", "Netlify"],
         link: "https://foodyfortune.netlify.app/",
@@ -171,19 +171,18 @@ const portfolioContent = {
   },
 
   contact: {
-    title: "Get In Touch",
+    title: "お問い合わせ",
     description:
-      "Ready to start your next project? Let's discuss how we can work together.",
-
+      "Web開発に関するご相談やお仕事のご依頼などがありましたら、お気軽にご連絡ください。",
     info: [
       {
-        type: "Email",
+        type: "メール",
         value: "araingulraiz@gmail.com",
         icon: "📧",
       },
       {
-        type: "Location",
-        value: "Tokyo, Japan",
+        type: "所在地",
+        value: "東京、日本",
         icon: "📍",
       },
     ],
@@ -192,10 +191,16 @@ const portfolioContent = {
   footer: {
     copyright: "© 2026 Rayz-An-Exception. All rights reserved.",
     socialLinks: [
-      { name: "GitHub", url: "https://github.com/authorminator" },
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/rayz-arain/" },
+      {
+        name: "GitHub",
+        url: "https://github.com/authorminator",
+      },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/rayz-arain/",
+      },
     ],
   },
 };
 
-export default portfolioContent;
+export default portfolioContentJa;

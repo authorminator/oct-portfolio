@@ -85,3 +85,38 @@
     font-size: 0.85rem;
   }
 }
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 2rem;
+}
+
+.language-switch button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #a7b0c0;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.language-switch button:hover {
+  opacity: 1;
+}
+
+.language-switch button.active {
+  color: #2bd9c6;
+  opacity: 1;
+  font-weight: 600;
+}
+
+.language-switch span {
+  color: rgba(255, 255, 255, 0.25);
+}

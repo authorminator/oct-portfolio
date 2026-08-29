@@ -1,8 +1,8 @@
 import portfolioContent from "../contents";
 import "./Projects.css";
 
-function Projects() {
-  const { projects } = portfolioContent.portfolio;
+function Projects({ content }) {
+  const { projects } = content.portfolio;
 
   return (
     <section id="projects" className="projects-section">
