@@ -206,7 +206,7 @@ const portfolioContent = {
 
   // Footer Section
   footer: {
-    copyright: "© 2025 Rayz-An-Exception. All rights reserved.",
+    copyright: "© 2026 Rayz-An-Exception. All rights reserved.",
     socialLinks: [
       { name: "GitHub", url: "https://github.com/authorminator" },
       { name: "LinkedIn", url: "https://www.linkedin.com/in/rayz-arain/" },
