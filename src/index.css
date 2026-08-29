@@ -50,29 +50,7 @@ body {
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
   color: var(--fg-0);
-  /* background: radial-gradient(
-      circle at 20% 20%,
-      rgba(43, 217, 198, 0.15),
-      transparent 70%
-    ),
-    radial-gradient(circle at 80% 10%, rgba(255, 200, 97, 0.1), transparent 70%),
-    linear-gradient(180deg, #0e0f12 0%, #0b0c10 100%);
-  background-image: radial-gradient(
-      circle at 20% 20%,
-      rgba(43, 217, 198, 0.15),
-      transparent 70%
-    ),
-    radial-gradient(circle at 80% 10%, rgba(255, 200, 97, 0.1), transparent 70%),
-    linear-gradient(
-      180deg,
-      rgba(14, 15, 18, 1) 0%,
-      rgba(10, 10, 12, 1) 80%,
-      rgba(5, 5, 6, 1) 100%
-    );
 
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover; */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   line-height: 1.6;
@@ -89,6 +67,11 @@ button {
   border: none;
   color: inherit;
   cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 /* -------------------------------------------------

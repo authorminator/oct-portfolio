@@ -2,6 +2,8 @@ import profileImg from "./assets/profile-photo.jpg";
 import studyHiveImg from "./assets/studyhive.png";
 import superHeroAcademyImg from "./assets/superhero-academy.png";
 import eigoParkImg from "./assets/eigo-park.png";
+import itoRainbowImg from "./assets/ito-rainbow.png";
+import foodyFortuneImg from "./assets/foody-fortune.png";
 
 const portfolioContent = {
   // Personal Information
@@ -43,36 +45,61 @@ const portfolioContent = {
     // Skills organized by category
     skills: [
       {
-        category: "Web Development",
+        category: "Web Development Tools",
         technologies: [
-          "Ruby on Rails",
-          "React",
-          "Vue.js",
-          "Node.js",
-          "Express.js",
-          "Git",
-          "PostgreSQL",
+          {
+            name: "Ruby on Rails",
+            icon: "devicon-rails-plain colored",
+          },
+          {
+            name: "React",
+            icon: "devicon-react-original colored",
+          },
+          {
+            name: "Vue.js",
+            icon: "devicon-vuejs-plain colored",
+          },
+          {
+            name: "Git",
+            icon: "devicon-git-plain colored",
+          },
+          {
+            name: "PostgreSQL",
+            icon: "devicon-postgresql-plain colored",
+          },
         ],
       },
+
       {
         category: "Programming Languages",
         technologies: [
-          "Ruby",
-          "Python",
-          "HTML5",
-          "CSS3",
-          "JavaScript",
-          "TypeScript",
+          {
+            name: "Ruby",
+            icon: "devicon-ruby-plain colored",
+          },
+          {
+            name: "Python",
+            icon: "devicon-python-plain colored",
+          },
+          {
+            name: "JavaScript",
+            icon: "devicon-javascript-plain colored",
+          },
+          {
+            name: "TypeScript",
+            icon: "devicon-typescript-plain colored",
+          },
         ],
       },
+
       {
         category: "Competencies",
         technologies: [
-          "Responsive Design",
-          "Prototyping",
-          "Web Application Development",
-          "Teaching",
-          "Team Collaboration",
+          { name: "Responsive Design" },
+          { name: "Prototyping" },
+          { name: "Web Application Development" },
+          { name: "Teaching" },
+          { name: "Team Collaboration" },
         ],
       },
     ],
@@ -90,27 +117,63 @@ const portfolioContent = {
         title: "StudyHive",
         description:
           "Make learning easier by doing it with other people rather than alone.",
+        more_description:
+          "Team Project - I was the Team Designer and one of the Developers",
         icon: "💻",
         technologies: ["Ruby on Rails", "PostgreSQL", "Stimulus js", "Heroku"],
         link: "https://www.studyhive.org/",
+        github: "https://github.com/authorminator/StudeeHive",
         image: studyHiveImg,
       },
       {
         title: "Super Hero Academy",
         description:
           "A fictional marketplace app about people trying to learn Super Powers.",
+        more_description:
+          "Team Project - I was the Project Manager and one of the Developers",
         icon: "🦸‍♂️",
         technologies: ["Ruby on Rails", "PostgreSQL", "Stimulus js", "Heroku"],
         link: "https://super-hero-academy-1c8a93bbc04f.herokuapp.com/",
+        github: "https://github.com/authorminator/SuperHeroAcademy-App",
         image: superHeroAcademyImg,
       },
       {
         title: "Eigo-Park",
         description: "An app of educational games for elementary school kids.",
+        more_description: "Solo Project",
         icon: "📔",
         technologies: ["React", "Vite", "Tailwind CSS", "Netlify"],
         link: "https://eigo-park.netlify.app/",
+        github: "https://github.com/authorminator/eigo-park",
         image: eigoParkImg,
+      },
+      {
+        title: "Ito-Rainbow Game",
+        description:
+          "A multiplayer web game inspired by Ito Rainbow by Arclight.",
+        more_description: "Solo Project",
+        icon: "📔",
+        technologies: [
+          "Ruby on Rails",
+          "PostgreSQL",
+          "Stimulus js",
+          "Sortable.js",
+          "Render.com",
+        ],
+        link: "https://ito-rainbow-app.onrender.com/",
+        github: "https://github.com/authorminator/ito-rainbow-app",
+        image: itoRainbowImg,
+      },
+      {
+        title: "Foody-Fortune Game",
+        description:
+          "A click-based minigame about destroying food items and finding motivational quotes inside them.",
+        more_description: "Solo Project",
+        icon: "📔",
+        technologies: ["React", "Vite", "Tailwind CSS", "Netlify"],
+        link: "https://foodyfortune.netlify.app/",
+        github: "https://github.com/authorminator/foodyfortune",
+        image: foodyFortuneImg,
       },
     ],
   },

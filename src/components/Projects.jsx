@@ -1,49 +1,70 @@
-import "./Projects.css";
 import portfolioContent from "../contents";
+import "./Projects.css";
 
-export default function Projects() {
-  const projects = portfolioContent.portfolio.projects;
+function Projects() {
+  const { projects } = portfolioContent.portfolio;
 
   return (
-    <section className="projects-section" id="projects">
-      <div className="container">
-        <h2 className="projects-heading">Projects</h2>
+    <section id="projects" className="projects-section">
+      <div className="projects-container">
+        <div className="section-header">
+          <h2 className="projects-heading">Projects</h2>
+          <div className="section-divider" />
+        </div>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className={`project-card ${
-                index % 2 === 1 ? "reverse-layout" : ""
-              }`}
-            >
+          {projects.map((project) => (
+            <article key={project.title} className="project-card">
               <div className="project-image">
                 <img src={project.image} alt={project.title} />
               </div>
 
               <div className="project-content">
                 <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="tech-list">
+
+                <p className="project-description">{project.description}</p>
+                <p className="project-description">
+                  {project.more_description}
+                </p>
+
+                <div className="project-technologies">
                   {project.technologies.map((tech) => (
-                    <span key={tech}>{tech}</span>
+                    <span key={tech} className="project-tech">
+                      {tech}
+                    </span>
                   ))}
                 </div>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    className="btn-view"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project
-                  </a>
-                )}
+
+                <div className="project-links">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="link-primary"
+                    >
+                      Visit
+                    </a>
+                  )}
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="link-secondary"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+export default Projects;
